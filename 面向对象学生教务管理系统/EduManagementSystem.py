@@ -47,6 +47,87 @@ class Student:
             self.english = english
 
 
+# 教务管理系统类
+class EudManagement:
+    system_version = "1.0"
+    system_name = "教务管理系统"
+
+    def __init__(self) :
+        self.student_list = [] # 列表，记录的是在校学生的成绩信息
+    
+    # 添加学生成绩
+    def add_student(self):
+        name = input("请输入学生姓名：")
+        
+        # 判断学生姓名是否存在，如果存在，则添加失败（不能重复添加）
+        for s in self.student_list:
+            if s.name == name:
+                print("该学生已经存在，添加失败")
+                return
+        
+        chinese = int(input("请输入语文成绩："))
+        math = int(input("请输入数学成绩：")) 
+        english = int(input("请输入英语成绩："))
+
+        # 判断分数是否在 0-100 之间
+        if 0 <= chinese <= 100 and 0 <= math <= 100 and 0 <= english <= 100:
+            stu = Student(name, chinese, math, english)
+            self.student_list.append(stu)
+            print("学生信息添加成功")
+        else:
+            print("各科成绩必须在0-100之间！")
+
+
+    # 修改学生成绩
+    def update_student(self):
+        name = input("请输入要修改的学生姓名：")
+        
+        # 需要根据学生姓名找到该学生信息
+        for s in self.student_list:
+            if s.name == name:
+                print(f"当前成绩：{s}")
+                chinese = int(input("请输入修改后的语文成绩："))
+                math = int(input("请输入修改后的数学成绩：")) 
+                english = int(input("请输入修改后的英语成绩："))
+
+                # 判断分数是否在 0-100 之间
+                if 0 <= chinese <= 100 and 0 <= math <= 100 and 0 <= english <= 100:
+                    s.update_score(chinese, math, english)
+                    print("成绩修改成功 ~")
+                    print(f"修改后的成绩：{s}")
+                    return
+                else:
+                    print("各科成绩必须在0-100之间！")
+                    return
+        print("未找到该学生，修改失败！")
+
+
+    # 删除学生成绩
+    def delete_student(self):
+        name = input("请输入要删除的学生姓名：")
+
+        for s in self.student_list:
+            if s.name == name:
+                self.student_list.remove(s)
+                print("学生信息删除成功！")
+                return
+        print("未找到该学生，删除失败！")
+
+    # 查询指定学生成绩
+    def query_student(self):
+        name = input("请输入要查询的学生姓名：")
+
+        for s in self.student_list:
+            if s.name == name:
+                print(f"查询结果：{s}")
+                return
+        print("未找到该学生！")
+
+
+    # 展示全部学生成绩
+    def list_student(self):
+        for s in self.student_list:
+            print(s)
 
 
 # 测试
