@@ -51,4 +51,8 @@ class Student:
 
 # 测试
 if __name__ == "__main__":
-    
+    s1 = Student("王林",90 , 88 , 92)
+    print(s1)
+
+    s1.update_score(english=95)
+    print(s1)
