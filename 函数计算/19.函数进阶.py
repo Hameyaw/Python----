@@ -26,3 +26,4 @@ def jc(n):
 
 result = jc(10)
 # print(f"这个正整数的阶乘结果是：{result}")
+
