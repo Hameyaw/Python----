@@ -18,3 +18,7 @@ print(PI)
 
 log_separator1()
 log_separator3()
+
+# pycharm中 Ctrl + Y快速删除一行
+
+
