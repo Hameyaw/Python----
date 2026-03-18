@@ -1,0 +1,133 @@
+# 忽略所有 .log 文件 (日志文件通常很大)
+*.log
+
+# 忽略 node_modules 目录 (前端项目依赖，非常大)
+node_modules/
+
+# 忽略 Python 虚拟环境和缓存
+venv/
+__pycache__/
+*.pyc
+
+# 忽略编译产物 (C++, Java, Go 等)
+build/
+dist/
+*.o
+*.class
+*.exe
+
+# 忽略大型数据文件或特定格式
+*.zip
+*.tar.gz
+data/large_dataset.csv
+
+# 忽略 IDE 配置文件夹 (通常包含大量缓存)
+.idea/
+.vscode/
+*.swp
+
+
+# ==========================================
+# 忽略媒体文件 (视频、音频、图片)
+# ==========================================
+
+# --- 视频文件 (Video) ---
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.flv
+*.wmv
+*.webm
+*.m4v
+*.mpeg
+*.mpg
+*.3gp
+
+# --- 音频文件 (Audio) ---
+*.mp3
+*.wav
+*.aac
+*.ogg
+*.flac
+*.m4a
+*.wma
+*.mid
+*.midi
+
+# --- 图片文件 (Images) ---
+# 注意：通常建议保留小图标 (.ico, .svg, 小尺寸 .png)，
+# 如果确实需要忽略所有图片，请取消下面注释。
+# 如果只忽略大型原始图片，建议只保留下面的 RAW 格式部分。
+
+# 1. 忽略常见位图 (如果项目不需要在仓库存图)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.webp
+
+# 2. 强烈建议忽略：相机/设计软件产生的大型原始图片 (这些通常非常大)
+*.raw
+*.cr2
+*.nef
+*.arw
+*.dng
+*.psd
+*.ai
+*.sketch
+
+# 3. 忽略常见的截图文件夹 (可选)
+screenshots/
+captures/
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/.open-next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+# cloudflare
+.output
+.wrangler
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+#vscode
+.history/
